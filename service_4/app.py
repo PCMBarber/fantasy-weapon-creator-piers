@@ -8,19 +8,9 @@ effects = {
     1: "Ice",
     2: "Lightning",
     3: "Water",
-    4: "Earth"
+    4: "Earth",
     5: "Light",
     6: "Dark"
-}
-
-levels = {
-    0: "Beginner",
-    1: "Adept",
-    2: "Competent",
-    3: "Advanced",
-    4: "Master",
-    5: "Herioc",
-    6: "Legendary"
 }
 
 swords = {
@@ -38,47 +28,47 @@ axes = {
         0: "Heavy",
         1: "Wimpy",
         2: "Devastating",
-        3: "Swift"
+        3: "Swift",
         4: "Slow"
     }
 }
 
 daggers = {
     "names": {
-        0: "Swift"
-        1: "Hidden"
-        2: "Piercing"
-        3: "Blunt"
+        0: "Swift",
+        1: "Hidden",
+        2: "Piercing",
+        3: "Blunt",
         4: "Useless"
     }
 }
 
 crossbows = {
     "names": {
-        0: "Swift"
-        1: "Slow"
-        2: "Piercing"
-        3: "Slapdash"
+        0: "Swift",
+        1: "Slow",
+        2: "Piercing",
+        3: "Slapdash",
         4: "Loud"
     }
 }
 
 bows = {
     "names": {
-        0: "Heavy"
-        1: "Long"
-        2: "Stunted"
-        3: "Silent"
+        0: "Heavy",
+        1: "Long",
+        2: "Stunted",
+        3: "Silent",
         4: "Short"
     }
 }
 
 staves = {
     "names": {
-        0: "Heavy"
-        1: "Long"
-        2: "Short"
-        3: "Light"
+        0: "Heavy",
+        1: "Long",
+        2: "Short",
+        3: "Light",
         4: "Useless"
     }
 }
@@ -89,8 +79,39 @@ def post_status():
     damage = request.json['damage']
 
     if weapon == 'sword':
+        name = random.choice(list(swords["names"].values()))
+    elif weapon == 'axe':
+        name = random.choice(list(axes["names"].values()))
+    elif weapon == 'dagger':
+        name = random.choice(list(daggers["names"].values()))
+    elif weapon == 'crossbow':
+        name = random.choice(list(crossbows["names"].values()))
+    elif weapon == 'bow':
+        name = random.choice(list(bows["names"].values()))
+    else:
+        name = random.choice(list(staves["names"].values()))
 
+    if damage <= 10:
+        level = "Beginner"
+    elif damage <= 20:
+        level = "Adept"
+    elif damage <= 30:
+        level = "Journeyman"
+    elif damage <= 40:
+        level = "Master"
+    elif damage <= 50:
+        level = "Hero"
+    else:
+        level = "Legend"
 
+    effect = random.choice(list(effects.values()))
+
+    status = {
+        "level": level,
+        "name": name,
+        "effect": effect
+    }
+    
     return jsonify(status) 
 
 if __name__ == '__main__':

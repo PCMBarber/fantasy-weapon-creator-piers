@@ -14,9 +14,9 @@ class TestResponse(TestBase):
     def test_index(self):
 
         with mock() as m:
-            m.get('http://34.105.171.115:80/get/weapon', text='Sword')
-            m.get('http://34.105.171.115:80/get/damage', json=15)
-            m.post('http://34.105.171.115:80/post/status', json={
+            m.get('http://service-2:5000/get/weapon', text='Sword')
+            m.get('http://service-3:5000/get/damage', json=15)
+            m.post('http://service-4:5000/post/status', json={
                 "name": "Sharp",
                 "level": "Adept",
                 "effect": "Fire"

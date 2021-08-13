@@ -11,7 +11,7 @@ class TestResponse(TestBase):
 
     def test_get_drink(self):
         damage = []
-        for i in range(60):
+        for i in range(61):
             damage.append(i)
 
         for i in range(20):

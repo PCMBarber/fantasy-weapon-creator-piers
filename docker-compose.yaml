@@ -1,0 +1,33 @@
+version: "3.9"
+services:
+  service-1:
+    container_name: service-1
+    image: theearlofgray/service-1:latest
+    build: service_1
+  
+  service-2:
+    container_name: service-2
+    image: theearlofgray/service-2:latest
+    build: service_2
+
+  service-3:
+    container_name: service-3
+    image: theearlofgray/service-3:latest
+    build: service_3
+
+  service-4:
+    container_name: service-4
+    image: theearlofgray/service-4:latest
+    build: service_4
+
+  proxy:
+    container_name: nginx-proxy
+    image: nginx:alpine
+    ports:
+      - 80:80
+    volumes:
+      - type: bind
+        source: ./nginx.conf
+        target: /etc/nginx/nginx.conf
+    depends_on:
+      - "service-1"

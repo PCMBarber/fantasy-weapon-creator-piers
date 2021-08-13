@@ -1,7 +1,7 @@
 pipeline{
     agent any
     stages{
-        stage{
+        stage('Install dependencies'){
             steps{
                 sh "bash scripts/dependencies.sh"
             }

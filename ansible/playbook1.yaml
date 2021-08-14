@@ -2,3 +2,11 @@
   become: yes
   roles:
     - load-balancer
+
+- hosts:
+  - swarm_managers
+  - swarm_workers
+  become: yes
+  roles:
+    - installing-docker
+

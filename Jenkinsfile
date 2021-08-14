@@ -9,12 +9,12 @@ pipeline{
                 sh "bash scripts/tests.sh"
             }
         }
-        stage('Install dependencies'){
+        stage('Installing dependencies'){
             steps{
                 sh "bash scripts/dependencies.sh"
             }
         }
-        stage('Build containers'){
+        stage('Building containers'){
             steps{
                 sh "docker login -u ${DOCKERHUB_LOGIN_USR} -p ${DOCKERHUB_LOGIN_PSW}"
                 sh "bash scripts/containers.sh"

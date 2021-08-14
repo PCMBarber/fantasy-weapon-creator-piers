@@ -1,6 +1,11 @@
 pipeline{
     agent any
     stages{
+        stage('Testing app'){
+            steps{
+                sh "bash scripts/tests.py"
+            }
+        }
         stage('Install dependencies'){
             steps{
                 sh "bash scripts/dependencies.sh"

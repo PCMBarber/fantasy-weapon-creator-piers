@@ -15,3 +15,9 @@
   become: yes
   roles:
     - swarm-setup
+
+- hosts:
+  - swarm_workers
+  become: yes
+  roles:
+    - swarm-join

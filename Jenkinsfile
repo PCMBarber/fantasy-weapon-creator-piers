@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('Testing app'){
             steps{
-                sh "bash scripts/tests.py"
+                sh "bash scripts/tests.sh"
             }
         }
         stage('Install dependencies'){

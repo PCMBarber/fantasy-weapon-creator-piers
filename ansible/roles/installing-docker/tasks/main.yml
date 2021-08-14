@@ -6,7 +6,7 @@
       - apt-transport-https
       - ca-certificates
       - curl
-      - gnup
+      - gnupg
       - lsb-release
       - python3-pip
     state: latest

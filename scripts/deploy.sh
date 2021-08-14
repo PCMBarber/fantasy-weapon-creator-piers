@@ -3,5 +3,5 @@
 rsync docker-compose.yaml nginx.conf swarm-manager:
 
 ssh swarm-manager << EOF
-docker stack deploy --compose-file docker-compose.yaml magic8ball
+docker stack deploy --compose-file docker-compose.yaml fantasy-weapon-generator
 EOF

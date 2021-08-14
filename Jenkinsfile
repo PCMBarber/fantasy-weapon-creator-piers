@@ -25,5 +25,10 @@ pipeline{
                 sh "bash scripts/ansible.sh"
             }
         }
+        stage('Deploying'){
+            steps{
+                sh "bash scripts/deploy.sh"
+            }
+        }
     }
 }

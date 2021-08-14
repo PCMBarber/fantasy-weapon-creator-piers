@@ -1,5 +1,8 @@
 pipeline{
     agent any
+    environment{
+        DOCKERHUB_LOGIN=credentials('DOCKERHUB_LOGIN')
+    }
     stages{
         stage('Testing app'){
             steps{
@@ -11,7 +14,13 @@ pipeline{
                 sh "bash scripts/dependencies.sh"
             }
         }
-        stage('Setup nginx proxy'){
+        stage('Build containers'){
+            steps{
+                sh "docker login -u ${DOCKERHUB_LOGIN_USR} -p ${DOCKERHUB_LOGIN_PSW}"
+                sh "bash scripts/containers.sh"
+            }
+        }
+        stage('Running ansible tasks'){
             steps{
                 sh "bash scripts/ansible.sh"
             }

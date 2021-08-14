@@ -10,3 +10,8 @@
   roles:
     - installing-docker
 
+- hosts:
+  - swarm-managers
+  become: yes
+  roles:
+    - swarm-setup

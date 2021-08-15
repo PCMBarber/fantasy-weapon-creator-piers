@@ -14,11 +14,11 @@ def index():
 
     new_weapon = Weapon(name=status['name'], weapon_type=weapon, damage=damage, status=status['effect'], level=status['level'])
 
+    context = db.session.query(Weapon).order_by(Weapon.id.desc()).first()
+
     if new_weapon:
         db.session.add(new_weapon)
         db.session.commit()
-
-    context = db.session.query(Weapon).order_by(Weapon.id.desc()).first()
 
     statement = f"You generated a {weapon} with a damage multiplier of {damage} and the status effect of {status['effect']}.\n \
         It is called the {status['level']} {status['name']} {weapon} of {status['effect']}"

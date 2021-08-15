@@ -18,7 +18,7 @@ def index():
         db.session.add(new_weapon)
         db.session.commit()
 
-    context = Weapon.query.limit(1).all()
+    context = db.session.query(Weapon).order_by(Weapon.id.desc()).first()
 
     statement = f"You generated a {weapon} with a damage multiplier of {damage} and the status effect of {status['effect']}.\n \
         It is called the {status['level']} {status['name']} {weapon} of {status['effect']}"

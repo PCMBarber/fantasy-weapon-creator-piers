@@ -1,4 +1,4 @@
-from application import app, db
+from . import app, db
 from application.models import Weapon
 from flask import render_template, redirect, url_for, request
 import requests, json
@@ -26,4 +26,3 @@ def index():
     return render_template('index.html', statement=statement, context=context)
 
 
-    

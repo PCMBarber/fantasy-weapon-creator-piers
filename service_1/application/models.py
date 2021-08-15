@@ -1,4 +1,4 @@
-from application import db
+from . import db
 
 class Weapon(db.Model):
     id = db.Column(db.Integer, primary_key=True)

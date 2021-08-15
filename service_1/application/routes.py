@@ -1,5 +1,5 @@
 from . import app, db
-from application.models import Weapon
+from .models import Weapon
 from flask import render_template, redirect, url_for, request
 import requests, json
 

@@ -36,28 +36,56 @@ I propose to create an app that will generate different fantasy style magic weap
 ### Trello
 
 I utilised Trello as the service for my project management. Trello is a very visual, useful service for keeping track of tasks as well as a useful place to store documentation as a project progresses.\
+![Trello](https://user-images.githubusercontent.com/80707106/129536136-1288b6c8-6929-414a-a96b-0ed30b5a10bc.png)
 
 
 ### ED
 
 This basic Entity diagram is what I started with to plan the full object to be generated and delivered to the user.\
+![ED - Early](https://user-images.githubusercontent.com/80707106/129536204-5327b6f0-f207-44a3-8611-1146c866ee64.png)
 
 
 ### Risk assessment
 
-The risk assessment for this project included a few items that should be considered for any project but as I progressed I discovered that there were further risks I had not yet considered and had to add to the matrix.\
+The risk assessment for this project included a few items that should be considered for any project but as I progressed I discovered that there were further risks I had not yet considered and had to add to the matrix. These are the items that have proposed control measures instead of implemented ones.\
+![Risk Assessment Later](https://user-images.githubusercontent.com/80707106/129536234-ca4300f1-f38e-45f7-a2da-c92d76f5ea9e.png)
 
 
 ### Services
 
 The following is the early code for Services 1-4. 
 
+![App1 - first draft](https://user-images.githubusercontent.com/80707106/129536250-e7dd1434-5425-4fd8-9429-38ca96e09d59.png)
+
+And for Service 1 this is the simple file structure I started with:
+![Service1 - no db](https://user-images.githubusercontent.com/80707106/129536765-678b7340-10cb-4e8a-b7f5-0ec6e3fbccb2.png)
+
+
+![Service 2](https://user-images.githubusercontent.com/80707106/129536396-4a495db4-a5c7-4344-8707-81bdedd1b3eb.png)
+
+![Service 3](https://user-images.githubusercontent.com/80707106/129536481-9403e248-eecf-4991-a794-516efc101d0a.png)
+
+![Service 4](https://user-images.githubusercontent.com/80707106/129536561-6d1d5d7f-9d13-47e1-950c-54a664b651c6.png)
 
 
 A good deal of refactoring was required for service 1 as it changed and developed throughout the course of the project. The addition of the database for data persistance was the main cause of the file structure of service 1 being so drastically altered.
 
+![Service 1 file - latest](https://user-images.githubusercontent.com/80707106/129536884-4b007daf-10c5-4cca-b606-0d670532283b.png)
+
+![Service 1 final](https://user-images.githubusercontent.com/80707106/129537006-5b51a529-4f5c-4f9c-92f0-01170ffb8ff6.png)
 
 
 ### Pipeline
 
-The following diagram shows how the 
+As this is a Continuous Deployment pipeline, there are certain things required for the project to run smoothly. \
+To start with, the unit testing needs to be run any time the code is updated to ensure the app will function correctly before being deployed.
+A webhook automates the running of the pipeline in Jenkins any time new code is pushed to the Main branch of the GitHub repository. Ansible then takes over to install dependencies, set up the swarm and restart NGINX if there are changes to the configuration file. Finally Jenkins will facilitate the use of the code in the repo to have docker-swarm deploy the stack. \
+
+The following diagram shows how the Pipeline should run.
+![Pipeline](https://user-images.githubusercontent.com/80707106/129537075-43c17f22-2709-4441-b00c-710398d07310.png)
+
+### Services
+
+The following diagram shows the services and how they should interact with each other.
+![Services](https://user-images.githubusercontent.com/80707106/129538210-a1361429-95da-499e-8957-520746a88e3e.png)
+

@@ -1,7 +1,7 @@
 from flask_testing import TestCase
 from flask import url_for
 from requests_mock import mock
-from service_1.app import app
+from service_1.application import app
 
 
 class TestBase(TestCase):

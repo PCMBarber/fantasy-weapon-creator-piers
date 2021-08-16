@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Fantasy Weapon Generator</title>
+{% endblock %}
+
+{% block content %}
+<h2>{{ statement }}</h2>
+<br>
+<p>**************************************************</p>
+<br>
+{% if context %}
+<h2>The previous weapon was the {{ context.level }} {{ context.name }} {{ context.weapon_type }} of {{ context.status }}</h2>
+{% endif %}
+{% endblock %}

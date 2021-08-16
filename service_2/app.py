@@ -3,7 +3,7 @@ import random
 
 app = Flask(__name__)
 
-weapon = ['Sword', 'Axe', 'Dagger', 'Crossbow', 'Bow', 'Staff']
+weapon = ['Sword', 'Axe', 'Dagger', 'Crossbow', 'Bow', 'Staff', 'Club']
 
 @app.route('/get/weapon')
 def get_weapon():

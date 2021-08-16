@@ -26,5 +26,4 @@ class TestResponse(TestBase):
 
 
         self.assert200(response)
-        self.assertIn("You generated a Sword with a damage multiplier of 15 and the status effect of Fire.\n \
-        It is called the Adept Sharp Sword of Fire", response.data.decode())
+        self.assertIn("It is called the Adept Sharp Sword of Fire", response.data.decode())

@@ -73,6 +73,16 @@ staves = {
     }
 }
 
+clubs = {
+    "names": {
+        0: "Heavy",
+        1: "Long",
+        2: "Short",
+        3: "Light",
+        4: "Useless"
+    }
+}
+
 @app.route('/post/status', methods=['POST'])
 def post_status():
     weapon = request.json['weapon']
@@ -88,6 +98,8 @@ def post_status():
         name = random.choice(list(crossbows["names"].values()))
     elif weapon == 'bow':
         name = random.choice(list(bows["names"].values()))
+    elif weapon == 'club':
+        name = random.choice(list(clubs["names"].values()))
     else:
         name = random.choice(list(staves["names"].values()))
 

@@ -89,3 +89,19 @@ The following diagram shows how the Pipeline should run.
 The following diagram shows the services and how they should interact with each other.
 ![Services](https://user-images.githubusercontent.com/80707106/129538210-a1361429-95da-499e-8957-520746a88e3e.png)
 
+### Testing
+
+I utilised Unit testing in my project, finishing up with coverage of 97%.
+![Testing](https://user-images.githubusercontent.com/80707106/129538810-1ef86e38-7a62-4f9a-934a-eff4ff07a43e.png)
+
+
+### The future
+
+-Develop the application further utilising full CRUD to allow the user to choose what weapon type they want to generate.
+-Further exploration of the technologies to ensure zero downtime on updates.
+
+### Acknowledgements
+-Oliver Nichols
+-Ryan Wright
+-Bootstrap - for style elements
+-W3schools - for basic navbar code

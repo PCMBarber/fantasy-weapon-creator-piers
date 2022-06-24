@@ -17,6 +17,7 @@ The scope of the project includes the following:
 
 The technologies that are to be used include:
 
+
 -Kanban Board: Asana or an equivalent Kanban Board
 -Version Control: Git
 -CI Server: Jenkins

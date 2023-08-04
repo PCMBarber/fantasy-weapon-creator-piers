@@ -106,3 +106,4 @@ I utilised Unit testing in my project, finishing up with coverage of 97%.
 -Ryan Wright
 -Bootstrap - for style elements
 -W3schools - for basic navbar code
+![Untitled](https://github.com/TheEarlOfGray/fantasy-weapon-creator/assets/80707106/f528650b-bf91-4569-9800-46d3e23a5205)

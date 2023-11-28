@@ -1,5 +1,5 @@
 # Fantasy Weapon Generator
-## Author - Earl Gray
+## Author - PIERS BARBER
 
 ## Objective
 
